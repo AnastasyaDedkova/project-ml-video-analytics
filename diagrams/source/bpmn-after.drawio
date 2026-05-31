@@ -2,190 +2,194 @@
   <diagram name="BPMN после внедрения" id="bpmn-after">
     <mxGraphModel dx="1800" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1000" math="0" shadow="0">
       <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
 
         <mxCell id="pool2" value="Контроль врачебной активности (после внедрения ML-системы)" style="shape=swimlane;html=1;startSize=24;fontSize=14;fontStyle=1;fillColor=#FFFFFF;strokeColor=#666666;" vertex="1" parent="1">
-          <mxGeometry x="40" y="40" width="2100" height="900" as="geometry" />
+          <mxGeometry x="40" y="40" width="2100" height="900" as="geometry"/>
         </mxCell>
 
         <mxCell id="ln_cam" value="IP-камера" style="shape=swimlane;html=1;horizontal=0;startSize=24;fontSize=12;fontStyle=1;fillColor=#E1E1E1;strokeColor=#808080;swimlaneFillColor=#FFFFFF;" vertex="1" parent="pool2">
-          <mxGeometry x="0" y="24" width="2100" height="100" as="geometry" />
+          <mxGeometry x="0" y="24" width="2100" height="100" as="geometry"/>
         </mxCell>
         <mxCell id="ln_ml" value="ML-система видеоаналитики" style="shape=swimlane;html=1;horizontal=0;startSize=24;fontSize=12;fontStyle=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;swimlaneFillColor=#FFFFFF;" vertex="1" parent="pool2">
-          <mxGeometry x="0" y="124" width="2100" height="260" as="geometry" />
+          <mxGeometry x="0" y="124" width="2100" height="260" as="geometry"/>
         </mxCell>
         <mxCell id="ln_mis" value="МИС" style="shape=swimlane;html=1;horizontal=0;startSize=24;fontSize=12;fontStyle=1;fillColor=#E1D5E7;strokeColor=#9673A6;swimlaneFillColor=#FFFFFF;" vertex="1" parent="pool2">
-          <mxGeometry x="0" y="384" width="2100" height="100" as="geometry" />
+          <mxGeometry x="0" y="384" width="2100" height="100" as="geometry"/>
         </mxCell>
-        <mxCell id="ln_notify" value="Система уведомлений" style="shape=swimlane;html=1;horizontal=0;startSize=24;fontSize=12;fontStyle=1;fillColor=#E1E1E1;strokeColor=#808080;swimlaneFillColor=#FFFFFF;" vertex="1" parent="pool2">
-          <mxGeometry x="0" y="484" width="2100" height="100" as="geometry" />
+        <mxCell id="ln_notify" value="Уведомления" style="shape=swimlane;html=1;horizontal=0;startSize=24;fontSize=12;fontStyle=1;fillColor=#E1E1E1;strokeColor=#808080;swimlaneFillColor=#FFFFFF;" vertex="1" parent="pool2">
+          <mxGeometry x="0" y="484" width="2100" height="100" as="geometry"/>
         </mxCell>
-        <mxCell id="ln_sec" value="Служба безопасности" style="shape=swimlane;html=1;horizontal=0;startSize=24;fontSize=12;fontStyle=1;fillColor=#FFF2CC;strokeColor=#D6B656;swimlaneFillColor=#FFFFFF;" vertex="1" parent="pool2">
-          <mxGeometry x="0" y="584" width="2100" height="120" as="geometry" />
+        <mxCell id="ln_sec" value="Безопасность" style="shape=swimlane;html=1;horizontal=0;startSize=24;fontSize=12;fontStyle=1;fillColor=#FFF2CC;strokeColor=#D6B656;swimlaneFillColor=#FFFFFF;" vertex="1" parent="pool2">
+          <mxGeometry x="0" y="584" width="2100" height="120" as="geometry"/>
         </mxCell>
         <mxCell id="ln_bi" value="BI / Superset" style="shape=swimlane;html=1;horizontal=0;startSize=24;fontSize=12;fontStyle=1;fillColor=#D5E8D4;strokeColor=#82B366;swimlaneFillColor=#FFFFFF;" vertex="1" parent="pool2">
-          <mxGeometry x="0" y="704" width="2100" height="172" as="geometry" />
+          <mxGeometry x="0" y="704" width="2100" height="172" as="geometry"/>
         </mxCell>
 
-        <mxCell id="ev2_start" value="Камера передаёт RTSP-видеопоток" style="ellipse;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=10;whiteSpace=wrap;" vertex="1" parent="pool2">
-          <mxGeometry x="60" y="58" width="70" height="70" as="geometry" />
+        <mxCell id="ev2_start" value="Камера передаёт видеопоток" style="ellipse;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=10;whiteSpace=wrap;" vertex="1" parent="pool2">
+          <mxGeometry x="60" y="58" width="70" height="70" as="geometry"/>
         </mxCell>
 
         <mxCell id="t_select_frames" value="Отбирает кадры / видеофрагменты" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="180" y="180" width="160" height="50" as="geometry" />
+          <mxGeometry x="180" y="180" width="160" height="50" as="geometry"/>
         </mxCell>
 
-        <mxCell id="t_form_batch" value="Формирует батч кадров" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="370" y="180" width="160" height="50" as="geometry" />
+        <mxCell id="t_form_batch" value="Формирует пакет кадров" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;" vertex="1" parent="pool2">
+          <mxGeometry x="370" y="180" width="160" height="50" as="geometry"/>
         </mxCell>
 
         <mxCell id="t_yolo" value="Запускает YOLO-модель" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="560" y="180" width="160" height="50" as="geometry" />
+          <mxGeometry x="560" y="180" width="160" height="50" as="geometry"/>
         </mxCell>
 
         <mxCell id="t_detect_patient" value="Определяет присутствие пациента в кресле" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="750" y="180" width="170" height="50" as="geometry" />
+          <mxGeometry x="750" y="180" width="170" height="50" as="geometry"/>
         </mxCell>
 
         <mxCell id="gw_patient" value="Пациент&#10;обнаружен?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=10;" vertex="1" parent="pool2">
-          <mxGeometry x="950" y="190" width="80" height="80" as="geometry" />
+          <mxGeometry x="950" y="190" width="80" height="80" as="geometry"/>
         </mxCell>
 
         <mxCell id="t_visit_start" value="Фиксирует начало фактического приёма" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="1060" y="180" width="160" height="50" as="geometry" />
+          <mxGeometry x="1060" y="180" width="160" height="50" as="geometry"/>
         </mxCell>
 
         <mxCell id="t_track" value="Отслеживает присутствие пациента" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="1250" y="180" width="160" height="50" as="geometry" />
+          <mxGeometry x="1250" y="180" width="160" height="50" as="geometry"/>
         </mxCell>
 
         <mxCell id="t_visit_end" value="Фиксирует окончание фактического приёма" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="1440" y="180" width="170" height="50" as="geometry" />
+          <mxGeometry x="1440" y="180" width="170" height="50" as="geometry"/>
         </mxCell>
 
         <mxCell id="t_compare" value="Сопоставляет фактический интервал с расписанием" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="1440" y="280" width="180" height="60" as="geometry" />
+          <mxGeometry x="1440" y="280" width="180" height="60" as="geometry"/>
         </mxCell>
 
         <mxCell id="t_mis_schedule" value="Предоставляет расписание приёмов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="1240" y="410" width="170" height="50" as="geometry" />
+          <mxGeometry x="1240" y="410" width="170" height="50" as="geometry"/>
         </mxCell>
 
         <mxCell id="gw_anomaly" value="Есть&#10;расхождение?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=10;" vertex="1" parent="pool2">
-          <mxGeometry x="1660" y="290" width="80" height="80" as="geometry" />
+          <mxGeometry x="1660" y="290" width="80" height="80" as="geometry"/>
         </mxCell>
 
         <mxCell id="t_normal_visit" value="Сохраняет нормальный приём" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="1780" y="180" width="160" height="50" as="geometry" />
+          <mxGeometry x="1780" y="180" width="160" height="50" as="geometry"/>
         </mxCell>
 
-        <mxCell id="t_create_anomaly" value="Создаёт кейс аномалии" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="1780" y="290" width="160" height="50" as="geometry" />
+        <mxCell id="t_create_anomaly" value="Создаёт случай аномалии" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontSize=11;" vertex="1" parent="pool2">
+          <mxGeometry x="1780" y="290" width="160" height="50" as="geometry"/>
         </mxCell>
 
         <mxCell id="t_notify_send" value="Отправляет уведомление" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1E1E1;strokeColor=#808080;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="1780" y="510" width="160" height="50" as="geometry" />
+          <mxGeometry x="1780" y="510" width="160" height="50" as="geometry"/>
         </mxCell>
 
-        <mxCell id="t_sec_receive" value="Получает кейс аномалии" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="1780" y="610" width="160" height="50" as="geometry" />
+        <mxCell id="t_sec_receive" value="Получает случай аномалии" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;" vertex="1" parent="pool2">
+          <mxGeometry x="1780" y="610" width="160" height="50" as="geometry"/>
         </mxCell>
 
         <mxCell id="t_sec_check" value="Проверяет видеофрагмент и расписание" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="1570" y="610" width="180" height="50" as="geometry" />
+          <mxGeometry x="1570" y="610" width="180" height="50" as="geometry"/>
         </mxCell>
 
-        <mxCell id="t_sec_status" value="Устанавливает статус кейса" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="1360" y="610" width="170" height="50" as="geometry" />
+        <mxCell id="t_sec_status" value="Устанавливает статус случая" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;" vertex="1" parent="pool2">
+          <mxGeometry x="1360" y="610" width="170" height="50" as="geometry"/>
         </mxCell>
 
         <mxCell id="t_bi" value="Передаёт агрегированные данные в BI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=11;" vertex="1" parent="pool2">
-          <mxGeometry x="1780" y="740" width="170" height="60" as="geometry" />
+          <mxGeometry x="1780" y="740" width="170" height="60" as="geometry"/>
         </mxCell>
 
         <mxCell id="ev2_end" value="Аномалия обработана / данные в отчётности" style="ellipse;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=3;fontSize=10;whiteSpace=wrap;" vertex="1" parent="pool2">
-          <mxGeometry x="1990" y="760" width="80" height="80" as="geometry" />
+          <mxGeometry x="1990" y="760" width="80" height="80" as="geometry"/>
         </mxCell>
 
         <mxCell id="note2" value="Изменение процесса: система автоматически выделяет фактические приёмы и расхождения с МИС, а служба безопасности проверяет уже подготовленные кейсы." style="shape=note;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;" vertex="1" parent="pool2">
-          <mxGeometry x="60" y="770" width="460" height="100" as="geometry" />
+          <mxGeometry x="60" y="770" width="460" height="100" as="geometry"/>
         </mxCell>
 
-        <mxCell id="legend2" value="Легенда:&#10;— голубой: ML-система&#10;— фиолетовый: МИС&#10;— серый: камера / уведомления&#10;— жёлтый: люди&#10;— красный: аномалии&#10;— зелёный: успешные исходы / BI&#10;— сплошная стрелка: основной поток&#10;— пунктирная стрелка: событие / сообщение" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=10;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;" vertex="1" parent="pool2">
-          <mxGeometry x="540" y="760" width="260" height="120" as="geometry" />
-        </mxCell>
+        
 
-        <mxCell id="ee1" value="RTSP-видеопоток" style="endArrow=classic;html=1;dashed=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="pool2" source="ev2_start" target="t_select_frames">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee1" value="видеопоток" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="pool2" source="ev2_start" target="t_select_frames">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee2" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_select_frames" target="t_form_batch">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee2" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_select_frames" target="t_form_batch">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee3" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_form_batch" target="t_yolo">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee3" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_form_batch" target="t_yolo">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee4" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_yolo" target="t_detect_patient">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee4" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_yolo" target="t_detect_patient">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee5" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_detect_patient" target="gw_patient">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee5" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_detect_patient" target="gw_patient">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee6" value="Нет — продолжить мониторинг" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=1;fontSize=10;" edge="1" parent="pool2" source="gw_patient" target="t_select_frames">
+        <mxCell id="ee6" value="Нет — продолжить мониторинг" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=1;entryX=0.5;entryY=1;fontSize=10;" edge="1" parent="pool2" source="gw_patient" target="t_select_frames">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="990" y="350" />
-              <mxPoint x="260" y="350" />
+              <mxPoint x="990" y="350"/>
+              <mxPoint x="260" y="350"/>
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ee7" value="Да" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=11;" edge="1" parent="pool2" source="gw_patient" target="t_visit_start">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee7" value="Да" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=11;" edge="1" parent="pool2" source="gw_patient" target="t_visit_start">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee8" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_visit_start" target="t_track">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee8" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_visit_start" target="t_track">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee9" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_track" target="t_visit_end">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee9" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_track" target="t_visit_end">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee10" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="pool2" source="t_visit_end" target="t_compare">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee10" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="pool2" source="t_visit_end" target="t_compare">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee11" value="расписание" style="endArrow=classic;html=1;fontSize=10;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="pool2" source="t_mis_schedule" target="t_compare">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee11" value="расписание" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="pool2" source="t_mis_schedule" target="t_compare">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee12" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_compare" target="gw_anomaly">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee12" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_compare" target="gw_anomaly">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee13" value="Нет" style="endArrow=classic;html=1;exitX=0.5;exitY=0;entryX=0;entryY=0.5;fontSize=11;" edge="1" parent="pool2" source="gw_anomaly" target="t_normal_visit">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee13" value="Нет" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=0;entryX=0;entryY=0.5;fontSize=11;" edge="1" parent="pool2" source="gw_anomaly" target="t_normal_visit">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee14" value="Да" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=11;" edge="1" parent="pool2" source="gw_anomaly" target="t_create_anomaly">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee14" value="Да" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=11;" edge="1" parent="pool2" source="gw_anomaly" target="t_create_anomaly">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee15" value="VisitAnomalyDetected" style="endArrow=classic;html=1;dashed=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="pool2" source="t_create_anomaly" target="t_notify_send">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee15" value="Расхождение с расписанием" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="pool2" source="t_create_anomaly" target="t_notify_send">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee16" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="pool2" source="t_notify_send" target="t_sec_receive">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee16" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="pool2" source="t_notify_send" target="t_sec_receive">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee17" style="endArrow=classic;html=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="pool2" source="t_sec_receive" target="t_sec_check">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee17" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="pool2" source="t_sec_receive" target="t_sec_check">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee18" style="endArrow=classic;html=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="pool2" source="t_sec_check" target="t_sec_status">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ee18" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="pool2" source="t_sec_check" target="t_sec_status">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ee19" value="данные для отчётности" style="endArrow=classic;html=1;dashed=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="pool2" source="t_normal_visit" target="t_bi">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="ee20" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_bi" target="ev2_end">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="ee21" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="pool2" source="t_sec_status" target="ev2_end">
+        <mxCell id="ee19" value="данные для отчётности" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.5;entryY=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="pool2" source="t_normal_visit" target="t_bi">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1445" y="780" />
-              <mxPoint x="2030" y="780" />
+              <mxPoint x="1970" y="205"/>
+              <mxPoint x="1970" y="725"/>
+              <mxPoint x="1865" y="725"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ee20" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="pool2" source="t_bi" target="ev2_end">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ee21" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" edge="1" parent="pool2" source="t_sec_status" target="ev2_end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1445" y="850"/>
+              <mxPoint x="2030" y="850"/>
             </Array>
           </mxGeometry>
         </mxCell>
